@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hangfire.Core" Version="1.8.12" />
+      <PackageReference Include="Hangfire.InMemory" Version="0.8.1" />
+      <PackageReference Include="Hangfire.SqlServer" Version="1.8.12" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hangfire.Redis.StackExchange\Hangfire.Redis.StackExchange.csproj" />
+      <ProjectReference Include="..\Hangfire.Redis.Tests\Hangfire.Redis.Tests.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -145,7 +145,8 @@ namespace Hangfire.Redis.StackExchange
             {
                 if (TimedOutByFetchedTime(fetched) || TimedOutByCheckedTime(fetched, @checked))
                 {
-                    var fetchedJob = new RedisFetchedJob(_storage, connection.Redis, jobId, queue);
+                    // we're not using fetched time here because the job will be removed from fetched queue by ServerJobCancellationWatcher 
+                    var fetchedJob = new RedisFetchedJob(_storage, connection.Redis, jobId, queue, JobHelper.DeserializeDateTime(fetched));
                     fetchedJob.Dispose();
 
                     return true;

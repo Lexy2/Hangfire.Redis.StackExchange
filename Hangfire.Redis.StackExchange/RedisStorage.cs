@@ -45,8 +45,9 @@ namespace Hangfire.Redis.StackExchange
                 { JobStorageFeatures.Connection.GetSetContains, true }, 
                 { JobStorageFeatures.Connection.LimitedGetSetCount, true }, 
                 { JobStorageFeatures.Transaction.AcquireDistributedLock, true }, 
-                { JobStorageFeatures.Transaction.CreateJob, true }, 
-                { JobStorageFeatures.Transaction.SetJobParameter, true}, 
+                // { JobStorageFeatures.Transaction.CreateJob, true }, 
+                // { JobStorageFeatures.Transaction.SetJobParameter, true}, 
+                // { JobStorageFeatures.Transaction.RemoveFromQueue(typeof(RedisFetchedJob)), true}, 
                 { JobStorageFeatures.Monitoring.DeletedStateGraphs, true }, 
                 { JobStorageFeatures.Monitoring.AwaitingJobs, true }
             };

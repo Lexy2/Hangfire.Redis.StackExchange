@@ -17,14 +17,15 @@ public class Test
         _logger.LogInformation("Task started");
         while (duration >= TimeSpan.Zero)
         {
-            cancellationToken.ThrowIfCancellationRequested();
+            // cancellationToken.ThrowIfCancellationRequested();
 
             var waitInterval = TimeSpan.FromSeconds(10);
             
             _logger.LogInformation(duration.ToString());
 
             _logger.LogInformation("Waiting...");
-            await Task.Delay(waitInterval, cancellationToken);
+            // await Task.Delay(waitInterval, cancellationToken);
+            await Task.Delay(waitInterval);
             duration -= waitInterval;
             _logger.LogInformation("Wait finished");
         }

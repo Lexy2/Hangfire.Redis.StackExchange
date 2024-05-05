@@ -14,11 +14,13 @@ builder.Services
             cfg.UseRedisStorage("localhost", new RedisStorageOptions()
             {
                 Db = 1,
-                InvisibilityTimeout = TimeSpan.FromSeconds(1),
-                UseTransactions = false
+                InvisibilityTimeout = TimeSpan.FromMinutes(7),
             });
         })
-    .AddHangfireServer(options => options.WorkerCount = 2);
+    .AddHangfireServer(options =>
+    {
+        options.WorkerCount = 2;
+    });
 
 var app = builder.Build();
 app.UseHangfireDashboard("");
